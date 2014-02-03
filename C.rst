@@ -122,4 +122,3 @@ Disclaimer
 ----------
 Personally, I find the above guidelines to create source documents that are incredibly well formatted and easy to read.
 They reflect experience and conclusions made from working with other styles.
-Code submitted to this repository should follow this style guide; if it does not, the commit may either be rejected, or it will be reformatted to conform before being merged.
