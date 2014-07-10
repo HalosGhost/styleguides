@@ -29,11 +29,17 @@ Below is an example of good casting::
 Function Declaration
 --------------------
 Similar to variable declarations, function names should be representative and lower_case.
-Also similar, data types should be separated from the function name.
+Also similar, data types should be separated from the function name (with the return type on its own line.
 The declarative argument list should be separated from the function name, and each item in the list should be separated by a comma, and a space.
+If the argument list is quite long, consider breaking it up with newlines and lining up the arguments with opening parenthesy of the function.
 When creating functions with generic names, prefix their names with an '_' (or with a module name, e.g., ``module_``).
-Below is an example of a good function declaration with an argument list::
-   char * _generic_function (int first_argument, char * second_argument);
+Below are examples of a good function declaration with an argument list::
+   char * 
+   _generic_function (int first_argument, char * second_argument);
+
+   int ** 
+   _generic_long_function_list (int first, char * second,
+                                double third);
 
 *Note that each argument is formatted as if it were a regular variable declaration*
 
@@ -41,11 +47,13 @@ Indentation and Bracing
 -----------------------
 When defining a function, all the same guidelines for function declaration apply.
 However, rather than ending the line with a ';', the argument list's close parenthesis ends the line.
-On the following line, the function's opening brace is placed at the same indent level as the function name, and then (without a line-break) follows the first line of the function indented.
+The function's opening brace is placed at the same indent level as the function name, and then, two new lines below, begins the function body (this means that there will be an empty space between the function name and the body).
 A standard indentation shall be four digits (this means that a function's first line will be spaced three times from the opening brace).
 The function's closing brace will be left to a newline at the same indentation level as the opening brace and function name.
 Below is an example of a good function definition showing good indentation and bracing style::
-   char * _generic_function (int first_argument, char * second_argument) {
+   char * 
+   _generic_function (int first_argument, char * second_argument) {
+
        first_argument = 1;
        second_argument = "some data";
        return second_argument;
@@ -58,9 +66,12 @@ This indentation style can be easily achieved in vim using the following modeset
 Calling Functions
 -----------------
 When calling a function, the function's argument list should be attached to the name.
-All other guidelines from the function declaration and definition sections apply.
+All other guidelines from the function declaration and definition sections apply (including breaking argument lists when the function expands beyond 80 characters).
 Below is an example of a good function call::
    _generic_function(7, "data");
+
+   _generic_long_argument_list(32000, "Lorem Ipsum dolor sit amet, et cetera",
+                               19874231.31890);
 
 Conditions
 ----------
